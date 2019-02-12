@@ -1,0 +1,4 @@
+Preconditions: need to import MSBuild.Community.Tasks.Targets
+
+<Zip ZipFileName="Compressed.zip" WorkingDirectory="MyWorkingDirectory" Files="MyWorkingDirectory\TargetDirectory" />
+
