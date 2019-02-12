@@ -1,0 +1,6 @@
+using PowerShell (starting from PowerShell 2016):
+Compress-Archive -Path SourceDirectory -DestinationPath Destination.zip
+
+using cmd:
+powershell.exe Compress-Archive -Path SourceDirectory -DestinationPath Destination.zip
+
