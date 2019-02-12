@@ -1,0 +1,17 @@
+
+<!-- The itemgroups are evaluated when the script is parsed. At that time your files aren't there yet. To be able to find the files you'll have to fill the itemgroup from within a target. 
+https://stackoverflow.com/questions/606605/msbuild-copy-task-not-copying-files-the-first-time-round
+-->
+<CreateItem Include="$(MSBuildProjectDirectory)\$(SourceFolderName)\**\*.*">
+  <Output ItemName="FilesToCopy" TaskParameter="Include"/>
+</CreateItem>
+
+<!--
+Copy all files and folders using msbuild
+https://stackoverflow.com/questions/119271/copy-all-files-and-folders-using-msbuild
+-->
+
+<Copy
+  SourceFiles="@(FilesToCopy)"  
+  DestinationFiles="@(AscxControls->'$(MSBuildProjectDirectory)\$(TargetFolderName)\%(RecursiveDir)%(Filename)%(Extension)')"
+/>
