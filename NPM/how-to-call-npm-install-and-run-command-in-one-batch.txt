@@ -1,0 +1,7 @@
+When you access another batch file from a batch file, you need to use the CALL command to return control to parent process otherwise control is passed to the batch file being executed.
+https://stackoverflow.com/questions/42305275/creating-a-bat-file-with-npm-install-command
+
+Use `call` command to 
+example:
+call npm install
+call npm run lessc
